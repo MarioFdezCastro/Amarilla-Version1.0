@@ -256,47 +256,7 @@ regresarRatito.addEventListener("click", function () {
 
 });
 
-const mensajeAleatorio =
-    document.getElementById("mensajeAleatorio");
 
-const otroMensaje =
-    document.getElementById("otroMensaje");
-
-
-const mensajes = [
-
-    "Gracias por existir en mi vida.",
-
-    "Espero que hoy encuentres aunque sea una pequeña razón para sonreír.",
-
-    "Si hoy fue un día difícil, recuerda que no tienes que poder con todo.",
-
-    "Me gusta compartir contigo incluso los días en los que no hacemos nada especial.",
-
-    "Hay muchos lugares bonitos, pero uno de mis favoritos siempre será estar contigo.",
-
-    "Solo quería recordarte que te quiero.",
-
-    "Vale por un abrazo largo cuando nos veamos.",
-
-    "Hoy quiero saber cuál fue la mejor parte de tu día.",
-
-    "Si pudieras estar en cualquier lugar conmigo ahora mismo, ¿a dónde iríamos?",
-
-    "Una de mis cosas favoritas es poder decir que eres parte de mi vida."
-
-];
-
-
-otroMensaje.addEventListener("click", function () {
-
-    const posicion =
-        Math.floor(Math.random() * mensajes.length);
-
-    mensajeAleatorio.textContent =
-        mensajes[posicion];
-
-});
 
 const actividadAleatoria =
     document.getElementById("actividadAleatoria");
@@ -389,3 +349,74 @@ function actualizarJardin() {
 
 
 actualizarJardin();
+
+function mostrarCartas() {
+
+    contenedorCartas.innerHTML = "";
+
+
+    cartas.forEach(function (carta, posicion) {
+
+        const tarjeta =
+            document.createElement("button");
+
+
+        tarjeta.classList.add("tarjeta-carta");
+
+
+        tarjeta.innerHTML = `
+
+            <span class="sobre-carta">
+                Para ti
+            </span>
+
+            <span class="titulo-tarjeta-carta">
+                ${carta.titulo}
+            </span>
+
+            <span class="descripcion-tarjeta-carta">
+                ${carta.subtitulo}
+            </span>
+
+        `;
+
+
+        tarjeta.addEventListener("click", function () {
+
+            abrirCarta(posicion);
+
+        });
+
+
+        contenedorCartas.appendChild(tarjeta);
+
+    });
+
+}
+
+
+mostrarCartas();
+
+function abrirCarta(posicion) {
+
+    const cartaSeleccionada =
+        cartas[posicion];
+
+
+    tituloCartaEspecial.textContent =
+        cartaSeleccionada.titulo;
+
+
+    textoCartaEspecial.textContent =
+        cartaSeleccionada.texto;
+
+
+    mostrarPantalla(pantallaCartaEspecial);
+
+}
+
+regresarCartas.addEventListener("click", function () {
+
+    mostrarPantalla(pantallaPenseEnTi);
+
+});
