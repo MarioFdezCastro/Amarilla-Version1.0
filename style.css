@@ -464,21 +464,6 @@ button:hover {
 /* JARDÍN                           */
 /* -------------------------------- */
 
-.jardin {
-    height: 270px;
-
-    background-color: rgba(255, 255, 255, 0.5);
-
-    border-radius: 25px;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    margin-bottom: 20px;
-
-    overflow: hidden;
-}
 
 .jardin {
     min-height: 270px;
@@ -2203,184 +2188,197 @@ h1 {
 .flor-fondo-4 { right: 86px; animation-delay: .75s; }
 .flor-fondo-5 { left: 48%; animation-delay: .95s; }
 
-.animalito {
-    position: absolute;
-    bottom: 16px;
-}
 
-.conejito {
-    left: 260px;
-    width: 44px;
-    height: 34px;
-    background: #fff7ef;
-    border-radius: 20px 20px 18px 18px;
-    box-shadow:
-        9px -22px 0 -8px #fff7ef,
-        20px -22px 0 -8px #fff7ef,
-        24px 3px 0 -8px #f4dac7;
-}
 
-.pajarito {
-    right: 215px;
-    bottom: 52px;
-    width: 26px;
-    height: 18px;
-    background: #f1d36f;
-    border-radius: 50% 50% 46% 46%;
-    box-shadow: 12px 5px 0 -8px #d18656;
-}
+/* =====================================================
+   FLORES DE LOS RECUERDOS DENTRO DEL JARDÍN
+===================================================== */
 
-.mariposa,
-.abejita {
-    position: absolute;
-}
-
-.mariposa::before,
-.mariposa::after {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 20px;
-    background: #f8d36d;
-    border-radius: 80% 20% 80% 20%;
-}
-
-.mariposa::before {
-    left: 0;
-    transform: rotate(-28deg);
-}
-
-.mariposa::after {
-    left: 12px;
-    transform: scaleX(-1) rotate(-28deg);
-}
-
-.mariposa-1 {
-    left: 95px;
-    top: 112px;
-    animation: volar1 5s ease-in-out infinite;
-}
-
-.mariposa-2 {
-    left: 360px;
-    top: 90px;
-    animation: volar2 6s ease-in-out infinite;
-}
-
-.abejita {
-    width: 20px;
-    height: 14px;
-    background: linear-gradient(90deg, #f6cf49 0 32%, #4d3828 32% 45%, #f6cf49 45% 68%, #4d3828 68% 80%, #f6cf49 80% 100%);
-    border-radius: 999px;
-    left: 520px;
-    top: 132px;
-    animation: volarAbeja 5.5s ease-in-out infinite;
-}
-
-.abejita::before,
-.abejita::after {
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 8px;
-    background: rgba(255,255,255,0.75);
-    border-radius: 60% 60% 60% 60%;
-    top: -4px;
-}
-
-.abejita::before { left: 4px; transform: rotate(-18deg); }
-.abejita::after { left: 9px; transform: rotate(18deg); }
-
-/* Contenedor de flores reales/recuerdos */
 .jardin-flores {
-    position: relative;
-    width: min(100%, 920px);
-    margin: 0 auto;
-    padding: 26px 16px 70px;
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+
+    height: 105px;
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 18px 14px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
+
+    gap: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
 }
 
-/* Tarjeta/flor generada */
-.jardin-flores .flor,
-.jardin-flores .flor-jardin,
-.flor-jardin,
-.tarjeta-flor,
-.maceta-recuerdo {
+
+
+/* Flor creada por JavaScript */
+
+.jardin-flores .flor-simple {
     position: relative;
-    animation: emergerFlor 0.95s ease both;
+
+    width: 44px;
+    height: 88px;
+
+    flex: 1 1 0;
+
+    min-width: 28px;
+    max-width: 44px;
+
+    animation: emergerFlor 0.9s ease both;
+
     transform-origin: bottom center;
 }
 
-/* Si tus flores del jardín son botones o divs */
-.jardin-flores > * {
-    min-width: 90px;
-    max-width: 140px;
-    border: none;
-    background: transparent;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.25s ease, filter 0.25s ease;
+
+/* Cabeza */
+
+.jardin-flores .flor-cabeza {
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 42px;
+    height: 42px;
+
+    transform: translateX(-50%);
 }
 
-.jardin-flores > *:hover {
-    transform: translateY(-8px) scale(1.03);
-    filter: drop-shadow(0 12px 18px rgba(78, 118, 59, 0.18));
-}
 
-/* Maceta/tallo flor bonita genérica */
-.jardin-flores > *::before {
-    content: "";
-    display: block;
-    width: 5px;
-    height: 58px;
-    margin: 0 auto -2px;
-    border-radius: 999px;
-    background: linear-gradient(180deg, #5ca15a, #3f7c41);
-}
+/* Pétalos */
 
-.jardin-flores > *::after {
-    content: "";
-    display: block;
-    width: 46px;
-    height: 28px;
-    margin: 2px auto 0;
-    border-radius: 6px 6px 18px 18px;
-    background: linear-gradient(180deg, #c99571, #b8815e);
-    box-shadow: 0 6px 14px rgba(89, 62, 33, 0.12);
-}
+.jardin-flores .petalo-simple {
+    position: absolute;
 
-/* pétalos visuales arriba */
-.jardin-flores > * .petalos,
-.jardin-flores > * .flor-visual {
-    display: block;
-    width: 72px;
-    height: 72px;
-    margin: 0 auto -10px;
+    width: 18px;
+    height: 24px;
+
+    background: linear-gradient(
+        180deg,
+        #f8df62,
+        #f1c634
+    );
+
     border-radius: 50%;
-    background:
-        radial-gradient(circle, #795217 0 12%, transparent 13%),
-        radial-gradient(circle at 50% 6%, #f8e56f 0 14%, transparent 15%),
-        radial-gradient(circle at 82% 25%, #f4d34d 0 14%, transparent 15%),
-        radial-gradient(circle at 94% 56%, #f2ca3f 0 14%, transparent 15%),
-        radial-gradient(circle at 68% 88%, #f8e06b 0 14%, transparent 15%),
-        radial-gradient(circle at 31% 88%, #f1c734 0 14%, transparent 15%),
-        radial-gradient(circle at 6% 56%, #f3cf47 0 14%, transparent 15%),
-        radial-gradient(circle at 18% 24%, #fbec94 0 14%, transparent 15%);
-    filter: drop-shadow(0 4px 8px rgba(109, 92, 36, 0.12));
 }
 
-/* Texto debajo de flores */
-.jardin-flores span,
-.jardin-flores p {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #5b4733;
+
+.jardin-flores .petalo-arriba {
+    top: 0;
+    left: 12px;
+}
+
+
+.jardin-flores .petalo-derecha {
+    top: 9px;
+    right: 0;
+
+    transform: rotate(90deg);
+}
+
+
+.jardin-flores .petalo-abajo {
+    bottom: 0;
+    left: 12px;
+}
+
+
+.jardin-flores .petalo-izquierda {
+    top: 9px;
+    left: 0;
+
+    transform: rotate(90deg);
+}
+
+
+/* Centro */
+
+.jardin-flores .centro-simple {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    top: 13px;
+    left: 13px;
+
+    background: #8b5d1e;
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+
+/* Tallo */
+
+.jardin-flores .tallo-simple {
+    position: absolute;
+
+    width: 4px;
+    height: 50px;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        180deg,
+        #69a85a,
+        #427b3c
+    );
+
+    border-radius: 999px;
+}
+
+
+/* Hojas */
+
+.jardin-flores .tallo-simple::before,
+.jardin-flores .tallo-simple::after {
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 9px;
+
+    top: 20px;
+
+    background: #69a85a;
+
+    border-radius: 100% 0 100% 0;
+}
+
+
+.jardin-flores .tallo-simple::before {
+    left: -12px;
+
+    transform: rotate(-28deg);
+}
+
+
+.jardin-flores .tallo-simple::after {
+    right: -12px;
+
+    transform: scaleX(-1) rotate(-28deg);
+}
+
+
+/* Pequeñas variaciones para que no parezcan clones */
+
+.jardin-flores .flor-simple:nth-child(2n) {
+    height: 80px;
+}
+
+.jardin-flores .flor-simple:nth-child(3n) {
+    height: 94px;
 }
 
 /* =====================================================
@@ -2486,9 +2484,8 @@ h1 {
 
 @media (max-width: 700px) {
     .ramo-inicio {
-        width: 180px;
-        height: 220px;
-        transform: scale(0.92);
+        width: 220px;
+        height: 250px;
     }
 
     .escena-jardin {
@@ -2636,4 +2633,1846 @@ h1 {
 .flor-carta .hoja-der{
   right: 20px;
   transform: scaleX(-1) rotate(-28deg);
+}
+
+/* =====================================================
+   RECUERDOS - ÁLBUM ROMÁNTICO
+===================================================== */
+
+#pantallaRecuerdos {
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 255, 255, 0.75),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 90% 32%,
+            rgba(250, 220, 108, 0.22),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #fffaf0 0%,
+            #f9edc4 55%,
+            #f2dda0 100%
+        );
+}
+
+
+/* Encabezado de la sección */
+
+#pantallaRecuerdos .contenido-seccion > h2 {
+    font-family: "Sacramento", cursive;
+
+    font-size: clamp(48px, 11vw, 62px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #8c6a2d;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 3px 10px rgba(255, 255, 255, 0.55);
+}
+
+
+#pantallaRecuerdos .descripcion-seccion {
+    color: #665640;
+
+    opacity: 0.82;
+
+    margin-bottom: 30px;
+}
+
+
+/* Lista */
+
+#pantallaRecuerdos .lista-recuerdos {
+    gap: 26px;
+
+    padding-bottom: 20px;
+}
+
+
+/* Tarjeta */
+
+#pantallaRecuerdos .recuerdo {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 254, 249, 0.95),
+            rgba(255, 249, 230, 0.9)
+        );
+
+    border: 1px solid rgba(207, 177, 91, 0.28);
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 16px 34px rgba(102, 77, 44, 0.11),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#pantallaRecuerdos .recuerdo:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 38px rgba(102, 77, 44, 0.15);
+}
+
+
+/* Fotografía */
+
+#pantallaRecuerdos .foto-recuerdo {
+    width: calc(100% - 24px);
+
+    height: 240px;
+
+    margin:
+        12px
+        12px
+        0;
+
+    border-radius: 18px;
+
+    object-fit: cover;
+
+    cursor: zoom-in;
+
+    box-shadow:
+        0 7px 18px rgba(82, 61, 35, 0.12);
+
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+#pantallaRecuerdos .foto-recuerdo:hover {
+    transform: scale(1.015);
+
+    filter:
+        brightness(1.03)
+        saturate(1.03);
+}
+
+
+/* Contenido */
+
+#pantallaRecuerdos .contenido-recuerdo {
+    padding:
+        18px
+        22px
+        24px;
+}
+
+
+/* Fecha */
+
+#pantallaRecuerdos .fecha-recuerdo {
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #9a7a3c;
+
+    margin-bottom: 7px;
+}
+
+
+/* Título del recuerdo:
+   misma tipografía que Amarilla */
+
+#pantallaRecuerdos .contenido-recuerdo h3 {
+    font-family: "Sacramento", cursive;
+
+    font-size: 32px;
+
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    color: #765526;
+
+    margin:
+        2px
+        0
+        10px;
+
+    letter-spacing: 0;
+}
+
+
+/* Descripción */
+
+#pantallaRecuerdos .contenido-recuerdo p {
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: #554838;
+}
+
+
+/* =====================================================
+   MODAL DE RECUERDOS
+===================================================== */
+
+.modal-recuerdo {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 34px 20px;
+
+    background:
+        rgba(45, 37, 27, 0.88);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    z-index: 5000;
+
+    animation:
+        aparecerModalRecuerdo 0.3s ease;
+}
+
+
+/* Marco */
+
+.marco-recuerdo {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    max-width: 92vw;
+    max-height: 88dvh;
+
+    padding: 12px;
+
+    background: #fffaf0;
+
+    border:
+        3px solid #e6c23b;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.38),
+        0 0 0 6px rgba(255, 250, 230, 0.8);
+}
+
+
+/* Imagen ampliada */
+
+.imagen-modal-recuerdo {
+    display: block;
+
+    max-width: min(84vw, 850px);
+    max-height: 80dvh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 13px;
+}
+
+
+/* Botón cerrar */
+
+.cerrar-modal-recuerdo {
+    position: fixed;
+
+    top:
+        calc(
+            18px
+            + env(safe-area-inset-top)
+        );
+
+    right: 18px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 250, 236, 0.94);
+
+    color: #735a2e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 29px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.2);
+
+    z-index: 5100;
+}
+
+
+/* =====================================================
+   FLORES DEL MARCO
+===================================================== */
+
+.flor-marco {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    z-index: 3;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 18%,
+            #f7d84e 0 20%,
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 82% 50%,
+            #f2c934 0 20%,
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 50% 82%,
+            #f7d84e 0 20%,
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 18% 50%,
+            #f2c934 0 20%,
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            #8b5d1e 0 18%,
+            transparent 20%
+        );
+
+    filter:
+        drop-shadow(
+            0 3px 4px
+            rgba(91, 68, 37, 0.16)
+        );
+}
+
+
+/* Hoja pequeña */
+
+.flor-marco::after {
+    content: "";
+
+    position: absolute;
+
+    width: 15px;
+    height: 9px;
+
+    right: -4px;
+    bottom: 1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #84b96a,
+            #568c50
+        );
+
+    border-radius:
+        100% 0
+        100% 0;
+
+    transform: rotate(25deg);
+
+    z-index: -1;
+}
+
+
+/* Posiciones */
+
+.flor-marco-1 {
+    top: -18px;
+    left: -18px;
+}
+
+
+.flor-marco-2 {
+    top: -18px;
+    right: -18px;
+}
+
+
+.flor-marco-3 {
+    bottom: -18px;
+    left: -18px;
+}
+
+
+.flor-marco-4 {
+    bottom: -18px;
+    right: -18px;
+}
+
+
+.flor-marco-5 {
+    top: -19px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(0.85);
+}
+
+
+.flor-marco-6 {
+    bottom: -19px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        scale(0.85);
+}
+
+
+/* Animación */
+
+@keyframes aparecerModalRecuerdo {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* Adaptación a teléfono */
+
+@media (max-width: 700px) {
+
+    #pantallaRecuerdos .foto-recuerdo {
+        height: 215px;
+    }
+
+
+    #pantallaRecuerdos .contenido-recuerdo h3 {
+        font-size: 30px;
+    }
+
+
+    .modal-recuerdo {
+        padding:
+            60px
+            22px;
+    }
+
+
+    .marco-recuerdo {
+        max-width: 91vw;
+
+        padding: 9px;
+
+        border-radius: 17px;
+    }
+
+
+    .imagen-modal-recuerdo {
+        max-width: 84vw;
+        max-height: 76dvh;
+
+        border-radius: 11px;
+    }
+
+
+    .flor-marco {
+        width: 32px;
+        height: 32px;
+    }
+
+
+    .flor-marco-1 {
+        top: -15px;
+        left: -15px;
+    }
+
+
+    .flor-marco-2 {
+        top: -15px;
+        right: -15px;
+    }
+
+
+    .flor-marco-3 {
+        bottom: -15px;
+        left: -15px;
+    }
+
+
+    .flor-marco-4 {
+        bottom: -15px;
+        right: -15px;
+    }
+
+}
+/* =====================================================
+   CREAR RECUERDO
+===================================================== */
+
+.boton-crear-recuerdo {
+    width: 100%;
+
+    margin:
+        0
+        0
+        26px;
+
+    padding:
+        15px
+        20px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid
+        rgba(182, 143, 49, 0.28);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 250, 229, 0.95),
+            rgba(248, 224, 141, 0.82)
+        );
+
+    color: #755827;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px
+        rgba(111, 82, 34, 0.09);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.boton-crear-recuerdo:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 24px
+        rgba(111, 82, 34, 0.13);
+}
+
+
+.icono-crear-recuerdo {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e9c846;
+
+    color: #fffaf0;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* Fondo del modal */
+
+.modal-crear-recuerdo {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    padding:
+        30px
+        18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(52, 43, 31, 0.78);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    z-index: 5200;
+}
+
+
+/* Tarjeta */
+
+.tarjeta-crear-recuerdo {
+    position: relative;
+
+    width: min(
+        100%,
+        440px
+    );
+
+    max-height: 90dvh;
+
+    overflow-y: auto;
+
+    padding:
+        31px
+        24px
+        25px;
+
+    border:
+        1px solid
+        rgba(204, 171, 76, 0.3);
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf5,
+            #fff5cf
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0, 0, 0, 0.28);
+
+    animation:
+        aparecerTarjetaRecuerdo
+        0.3s
+        ease;
+}
+
+
+.tarjeta-crear-recuerdo h3 {
+    margin:
+        2px
+        0
+        23px;
+
+    font-family:
+        "Sacramento",
+        cursive;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    text-align: center;
+
+    color: #775726;
+}
+
+
+.mini-titulo-crear-recuerdo {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #9a7d4d;
+}
+
+
+/* Cerrar */
+
+.cerrar-crear-recuerdo {
+    position: absolute;
+
+    top: 13px;
+    right: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    color: #806536;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* Campos */
+
+.campo-nuevo-recuerdo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin-bottom: 17px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #69583c;
+}
+
+
+.campo-nuevo-recuerdo input,
+.campo-nuevo-recuerdo textarea {
+    width: 100%;
+
+    padding:
+        12px
+        14px;
+
+    border:
+        1px solid
+        rgba(173, 142, 65, 0.26);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    color: #534632;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.campo-nuevo-recuerdo textarea {
+    resize: vertical;
+
+    min-height: 95px;
+}
+
+
+.campo-nuevo-recuerdo input:focus,
+.campo-nuevo-recuerdo textarea:focus {
+    border-color: #d7b942;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(215, 185, 66, 0.12);
+}
+
+
+/* Input real escondido */
+
+.input-foto-recuerdo {
+    display: none;
+}
+
+
+/* Botón elegir fotografía */
+
+.selector-foto-recuerdo {
+    padding:
+        13px
+        15px;
+
+    text-align: center;
+
+    border:
+        1px dashed
+        rgba(164, 130, 45, 0.48);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 251, 231, 0.75);
+
+    color: #866a30;
+
+    cursor: pointer;
+}
+
+
+/* Vista previa */
+
+.preview-nuevo-recuerdo {
+    width: 100%;
+    height: 180px;
+
+    margin-top: 5px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(84, 64, 35, 0.12);
+}
+
+
+/* Botones */
+
+.acciones-crear-recuerdo {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+
+.boton-cancelar-recuerdo,
+.boton-guardar-recuerdo {
+    flex: 1;
+
+    min-height: 44px;
+
+    padding:
+        11px
+        12px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+}
+
+
+.boton-cancelar-recuerdo {
+    background:
+        rgba(121, 105, 76, 0.1);
+
+    color: #6b604d;
+}
+
+
+.boton-guardar-recuerdo {
+    background:
+        linear-gradient(
+            135deg,
+            #f2cf4e,
+            #e4b92e
+        );
+
+    color: #5f481d;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 16px
+        rgba(177, 135, 27, 0.17);
+}
+
+
+.boton-guardar-recuerdo:disabled {
+    opacity: 0.65;
+
+    cursor: default;
+}
+
+
+@keyframes aparecerTarjetaRecuerdo {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(14px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .modal-crear-recuerdo {
+        padding:
+            20px
+            14px;
+    }
+
+
+    .tarjeta-crear-recuerdo {
+        padding:
+            30px
+            19px
+            22px;
+
+        border-radius: 23px;
+    }
+
+
+    .tarjeta-crear-recuerdo h3 {
+        font-size: 39px;
+    }
+
+
+    .preview-nuevo-recuerdo {
+        height: 165px;
+    }
+
+}
+/* =====================================================
+   PENSÉ EN TI - REDISEÑO
+===================================================== */
+
+
+/* -----------------------------------------------------
+   FONDO DE LA PANTALLA DE SOBRES
+----------------------------------------------------- */
+
+#pantallaPenseEnTi {
+    background:
+        radial-gradient(
+            circle at 12% 16%,
+            rgba(255, 255, 255, 0.78),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 88% 70%,
+            rgba(231, 192, 76, 0.22),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #fffaf0 0%,
+            #f9ecc2 55%,
+            #f1dc9e 100%
+        );
+}
+
+
+/* Título principal */
+
+#pantallaPenseEnTi .contenido-seccion > h2 {
+    font-family:
+        "Sacramento",
+        cursive;
+
+    font-size:
+        clamp(48px, 11vw, 62px);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #846125;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 3px 10px
+        rgba(255, 255, 255, 0.5);
+}
+
+
+#pantallaPenseEnTi .descripcion-seccion {
+    color: #685941;
+
+    opacity: 0.82;
+
+    margin-bottom: 32px;
+}
+
+
+
+/* =====================================================
+   LISTA DE SOBRES
+===================================================== */
+
+#pantallaPenseEnTi .contenedor-cartas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 23px;
+
+    padding-bottom: 30px;
+}
+
+
+
+/* Cada tarjeta ahora es un sobre */
+
+#pantallaPenseEnTi .tarjeta-carta {
+    position: relative;
+
+    isolation: isolate;
+
+    width: 100%;
+
+    min-height: 155px;
+
+    padding:
+        40px
+        28px
+        27px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(166, 128, 42, 0.25);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff9e8,
+            #f3daa0
+        );
+
+    box-shadow:
+        0 13px 28px
+        rgba(93, 69, 32, 0.12);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+
+/* Solapa triangular del sobre */
+
+#pantallaPenseEnTi .tarjeta-carta::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 82px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4dc9f,
+            #e8c36d
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 88%
+        );
+
+    opacity: 0.82;
+
+    z-index: 0;
+}
+
+
+
+/* Pliegues inferiores del sobre */
+
+#pantallaPenseEnTi .tarjeta-carta::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            32deg,
+            rgba(213, 177, 88, 0.20) 0 49%,
+            transparent 50%
+        )
+        left bottom /
+        50% 70%
+        no-repeat,
+
+        linear-gradient(
+            -32deg,
+            rgba(213, 177, 88, 0.20) 0 49%,
+            transparent 50%
+        )
+        right bottom /
+        50% 70%
+        no-repeat;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+
+/* Todo el texto se mantiene encima del sobre */
+
+#pantallaPenseEnTi .tarjeta-carta > span {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+#pantallaPenseEnTi .tarjeta-carta:hover {
+    transform:
+        translateY(-4px)
+        rotate(-0.3deg);
+
+    box-shadow:
+        0 18px 34px
+        rgba(93, 69, 32, 0.17);
+}
+
+
+
+/* Pequeño sello "Para ti" */
+
+#pantallaPenseEnTi .sobre-carta {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+
+    margin:
+        0
+        0
+        12px;
+
+    padding:
+        5px
+        12px;
+
+    border:
+        1px solid
+        rgba(142, 103, 32, 0.20);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 250, 229, 0.85);
+
+    color: #896b30;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    opacity: 1;
+
+    box-shadow:
+        0 3px 8px
+        rgba(101, 75, 35, 0.07);
+}
+
+
+
+/* Título de cada carta */
+
+#pantallaPenseEnTi .titulo-tarjeta-carta {
+    margin-bottom: 7px;
+
+    font-family:
+        "Sacramento",
+        cursive;
+
+    font-size: 29px;
+
+    font-weight: 400;
+
+    line-height: 1.12;
+
+    color: #735222;
+}
+
+
+
+/* Descripción */
+
+#pantallaPenseEnTi .descripcion-tarjeta-carta {
+    max-width: 300px;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: #695b45;
+
+    opacity: 0.78;
+}
+
+
+
+/* =====================================================
+   PANTALLA DE CARTA ABIERTA
+===================================================== */
+
+#pantallaCartaEspecial {
+    background:
+
+        radial-gradient(
+            circle at 18% 12%,
+            rgba(255, 255, 255, 0.7),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 84% 85%,
+            rgba(226, 186, 67, 0.18),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            180deg,
+            #fffaf0,
+            #f4e1ab
+        );
+}
+
+
+
+.contenido-carta-especial {
+    width: 100%;
+
+    max-width: 600px;
+
+    padding-bottom: 55px;
+}
+
+
+
+/* =====================================================
+   ESCENA DEL SOBRE
+===================================================== */
+
+.escena-carta-abierta {
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding:
+        30px
+        0
+        40px;
+
+    perspective: 900px;
+}
+
+
+
+.sobre-grande {
+    position: relative;
+
+    width: 100%;
+
+    padding-bottom: 115px;
+}
+
+
+
+/* Fondo del sobre */
+
+.fondo-sobre-grande {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 175px;
+
+    border:
+        1px solid
+        rgba(149, 108, 34, 0.22);
+
+    border-radius:
+        0
+        0
+        22px
+        22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f6dfaa,
+            #e8c778
+        );
+
+    box-shadow:
+        0 18px 35px
+        rgba(80, 59, 26, 0.15);
+
+    z-index: 0;
+}
+
+
+
+/* =====================================================
+   PAPEL DE LA CARTA
+===================================================== */
+
+#pantallaCartaEspecial .papel-carta {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        0
+        22px;
+
+    padding:
+        43px
+        38px
+        50px;
+
+    border:
+        1px solid
+        rgba(173, 141, 75, 0.18);
+
+    border-radius:
+        7px;
+
+    background:
+
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 253, 244, 0.96)
+                0px,
+            rgba(255, 253, 244, 0.96)
+                31px,
+            rgba(185, 151, 91, 0.07)
+                32px
+        ),
+
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #fff8e7
+        );
+
+    box-shadow:
+        0 13px 35px
+        rgba(74, 54, 27, 0.14);
+
+    opacity: 0;
+
+    transform:
+        translateY(110px)
+        scale(0.97);
+
+    transform-origin:
+        bottom center;
+}
+
+
+
+/* Pensé en ti pequeño */
+
+#pantallaCartaEspecial .tipo-carta {
+    margin-bottom: 9px;
+
+    font-family:
+        "Quicksand",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    color: #a17e39;
+
+    opacity: 0.75;
+}
+
+
+
+/* Título de la carta */
+
+#pantallaCartaEspecial #tituloCartaEspecial {
+    margin:
+        0
+        0
+        29px;
+
+    font-family:
+        "Sacramento",
+        cursive;
+
+    font-size:
+        clamp(35px, 8vw, 46px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    color: #755324;
+}
+
+
+
+/* Texto */
+
+#pantallaCartaEspecial #textoCartaEspecial {
+    white-space: pre-line;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    font-style: italic;
+
+    line-height: 1.85;
+
+    text-align: left;
+
+    color: #554837;
+}
+
+
+
+/* Firma */
+
+#pantallaCartaEspecial .firma-carta {
+    margin-top: 34px;
+
+    font-family:
+        "Sacramento",
+        cursive;
+
+    font-size: 30px;
+
+    font-style: normal;
+
+    text-align: right;
+
+    color: #75592e;
+
+    opacity: 0.88;
+}
+
+
+
+/* =====================================================
+   PARTE FRONTAL DEL SOBRE
+===================================================== */
+
+.frente-sobre-grande {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 0;
+
+    height: 145px;
+
+    background:
+
+        linear-gradient(
+            32deg,
+            #edcf88 0 49%,
+            transparent 50%
+        )
+        left bottom /
+        52% 100%
+        no-repeat,
+
+        linear-gradient(
+            -32deg,
+            #edcf88 0 49%,
+            transparent 50%
+        )
+        right bottom /
+        52% 100%
+        no-repeat,
+
+        linear-gradient(
+            180deg,
+            transparent 0 36%,
+            #f2d99a 37%
+        );
+
+    border-radius:
+        0
+        0
+        22px
+        22px;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+
+
+/* =====================================================
+   SOLAPA
+===================================================== */
+
+.solapa-sobre-grande {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 94px;
+
+    height: 155px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5dea6,
+            #e8c46f
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    transform-origin:
+        top center;
+
+    z-index: 4;
+
+    backface-visibility: hidden;
+}
+
+
+
+/* =====================================================
+   ANIMACIÓN
+===================================================== */
+
+.escena-carta-abierta.animar-carta
+.solapa-sobre-grande {
+    animation:
+        abrirSolapaCarta
+        0.52s
+        ease
+        forwards;
+}
+
+
+
+.escena-carta-abierta.animar-carta
+.papel-carta {
+    animation:
+        cartaSaliendoSobre
+        0.95s
+        cubic-bezier(
+            0.2,
+            0.75,
+            0.25,
+            1
+        )
+        0.34s
+        forwards;
+}
+
+
+
+@keyframes abrirSolapaCarta {
+
+    0% {
+        transform:
+            perspective(700px)
+            rotateX(0deg);
+
+        opacity: 1;
+
+        z-index: 4;
+    }
+
+
+    65% {
+        opacity: 0.75;
+    }
+
+
+    100% {
+        transform:
+            perspective(700px)
+            rotateX(165deg);
+
+        opacity: 0.18;
+
+        z-index: 1;
+    }
+
+}
+
+
+
+@keyframes cartaSaliendoSobre {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(110px)
+            scale(0.97);
+    }
+
+
+    35% {
+        opacity: 1;
+    }
+
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(-25px)
+            scale(1);
+    }
+
+}
+
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 600px) {
+
+    #pantallaPenseEnTi
+    .tarjeta-carta {
+        min-height: 145px;
+
+        padding:
+            36px
+            20px
+            24px;
+    }
+
+
+    #pantallaPenseEnTi
+    .titulo-tarjeta-carta {
+        font-size: 27px;
+    }
+
+
+    .escena-carta-abierta {
+        margin-top: 12px;
+
+        padding-top: 25px;
+    }
+
+
+    .sobre-grande {
+        padding-bottom: 95px;
+    }
+
+
+    .fondo-sobre-grande {
+        height: 145px;
+
+        border-radius:
+            0
+            0
+            18px
+            18px;
+    }
+
+
+    .solapa-sobre-grande {
+        bottom: 73px;
+
+        height: 128px;
+    }
+
+
+    .frente-sobre-grande {
+        height: 118px;
+
+        border-radius:
+            0
+            0
+            18px
+            18px;
+    }
+
+
+    #pantallaCartaEspecial
+    .papel-carta {
+        margin:
+            0
+            10px;
+
+        padding:
+            37px
+            24px
+            42px;
+    }
+
+
+    #pantallaCartaEspecial
+    #tituloCartaEspecial {
+        font-size: 36px;
+
+        margin-bottom: 23px;
+    }
+
+
+    #pantallaCartaEspecial
+    #textoCartaEspecial {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
+
+
+    #pantallaCartaEspecial
+    .firma-carta {
+        font-size: 27px;
+    }
+
 }
