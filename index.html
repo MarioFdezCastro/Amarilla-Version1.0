@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
 
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
+    
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    
     >
 
     <title>Amarilla</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -19,8 +25,49 @@
     <!-- Pantalla inicial -->
     <main class="pantalla inicio" id="pantallaInicio">
 
-        <div class="flor">
-            🌼
+        <div class="ramo-inicio">
+            <div class="envoltura-ramo"></div>
+
+            <div class="tallo-grupo tallo-1"></div>
+            <div class="tallo-grupo tallo-2"></div>
+            <div class="tallo-grupo tallo-3"></div>
+            <div class="tallo-grupo tallo-4"></div>
+            <div class="tallo-grupo tallo-5"></div>
+            <div class="tallo-grupo tallo-6"></div>
+            <div class="tallo-grupo tallo-7"></div>
+
+            <div class="flor-ramo flor-a">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-b">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-c">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-d">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-e">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-f">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="flor-ramo flor-g">
+                <span class="centro-flor"></span>
+            </div>
+
+            <div class="hoja-ramo hoja-a"></div>
+            <div class="hoja-ramo hoja-b"></div>
+            <div class="hoja-ramo hoja-c"></div>
+            <div class="hoja-ramo hoja-d"></div>
         </div>
 
         <h1>Amarilla</h1>
@@ -67,8 +114,16 @@
                 Así que decidí plantar la primera aquí.
             </p>
 
-            <div class="primera-flor">
-                🌻
+            <div class="flor-carta" aria-hidden="true">
+            <span class="petalo p1"></span>
+            <span class="petalo p2"></span>
+            <span class="petalo p3"></span>
+            <span class="petalo p4"></span>
+            <span class="petalo p5"></span>
+            <span class="centro"></span>
+            <span class="tallo"></span>
+            <span class="hoja hoja-izq"></span>
+            <span class="hoja hoja-der"></span>
             </div>
 
             <p class="frase-final">
@@ -178,8 +233,34 @@
                 Un pequeño lugar que crecerá con nosotros.
             </p>
 
+            <div class="escena-jardin">
+                <div class="cielo-jardin">
+                    <div class="sol-jardin"></div>
 
-            <div class="jardin" id="jardinFlores">
+                    <div class="nube nube-1"></div>
+                    <div class="nube nube-2"></div>
+                    <div class="nube nube-3"></div>
+
+                    <div class="mariposa mariposa-1"></div>
+                    <div class="mariposa mariposa-2"></div>
+                    <div class="abejita abejita-1"></div>
+                </div>
+
+                <div class="colinas-jardin colina-1"></div>
+                <div class="colinas-jardin colina-2"></div>
+
+                <div class="campo-jardin">
+                    <div class="flor-fondo flor-fondo-1"></div>
+                    <div class="flor-fondo flor-fondo-2"></div>
+                    <div class="flor-fondo flor-fondo-3"></div>
+                    <div class="flor-fondo flor-fondo-4"></div>
+                    <div class="flor-fondo flor-fondo-5"></div>
+
+                    <div class="animalito conejito"></div>
+                    <div class="animalito pajarito"></div>
+                </div>
+            </div>
+            <div class="jardin-flores" id="jardinFlores">
 
                 <!-- JavaScript plantará las flores -->
 
@@ -295,38 +376,248 @@
 
     </section>
     <!-- UN RATITO -->
-    <section class="pantalla seccion-app oculto" id="pantallaRatito">
+    <section id="pantallaRatito" class="pantalla seccion-app oculto">
 
         <button class="boton-regresar" id="regresarRatito">
-            ←
+            ← 
         </button>
 
-        <div class="contenido-seccion">
+        <div class="contenido-ratito">
 
-            <p class="nombre-app">Amarilla</p>
+            <p class="subtitulo-ratito">Un pequeño descanso</p>
 
             <h2>Un ratito</h2>
 
-            <p class="descripcion-seccion">
-                Para cuando quieras desconectarte un momento.
+            <p class="descripcion-ratito">
+                Este rinconcito es para jugar, distraernos y conocernos un poquito más.
+                No hay prisa. Elige lo que te apetezca hacer hoy.
             </p>
 
+            <div class="opciones-ratito">
 
-            <div class="actividad-cozy">
+                <button class="opcion-ratito" id="abrirRepisa">
 
-                <p class="titulo-actividad">
-                    ¿Qué hacemos?
-                </p>
+                    <span class="icono-opcion icono-repisa"></span>
 
-                <p id="actividadAleatoria">
-                    Presiona el botón y veamos qué nos toca.
-                </p>
+                    <span class="contenido-opcion-ratito">
+
+                        <span class="titulo-opcion">
+                            Acomoda la repisa
+                        </span>
+
+                        <span class="descripcion-opcion">
+                            Un pequeño rincón se desordenó.
+                            Ayúdame a dejarlo bonito otra vez.
+                        </span>
+
+                    </span>
+
+                </button>
+
+
+                <button class="opcion-ratito" id="abrirLuciernagas">
+
+                    <span class="icono-opcion icono-luciernagas"></span>
+
+                    <span class="contenido-opcion-ratito">
+
+                        <span class="titulo-opcion">
+                            Jardín de luciérnagas
+                        </span>
+
+                        <span class="descripcion-opcion">
+                            Encuentra pequeñas luces escondidas
+                            entre las flores.
+                        </span>
+
+                    </span>
+
+                </button>
+
+
+                <button class="opcion-ratito" id="abrirMemorama">
+
+                    <span class="icono-opcion icono-memorama"></span>
+
+                    <span class="contenido-opcion-ratito">
+
+                        <span class="titulo-opcion">
+                            Memorama
+                        </span>
+
+                        <span class="descripcion-opcion">
+                            Encuentra las parejas escondidas
+                            en nuestro pequeño juego.
+                        </span>
+
+                    </span>
+
+                </button>
+
+
+                <button class="opcion-ratito" id="abrirConocernos">
+
+                    <span class="icono-opcion icono-conocernos"></span>
+
+                    <span class="contenido-opcion-ratito">
+
+                        <span class="titulo-opcion">
+                            Conocernos
+                        </span>
+
+                        <span class="descripcion-opcion">
+                            Preguntas para descubrir nuevas cositas
+                            la una de la otra.
+                        </span>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- JUEGO: ACOMODA LA REPISA -->
+
+    <section id="pantallaRepisa" class="pantalla seccion-app oculto">
+
+        <button class="boton-regresar" id="regresarRepisa">
+            ←
+        </button>
+
+        <div class="contenido-repisa">
+
+            <p class="subtitulo-repisa">
+                Un ratito
+            </p>
+
+            <h2>Acomoda la repisa</h2>
+
+            <p class="descripcion-repisa">
+                Nuestro pequeño rincón se desordenó.
+                Toca un objeto y después el lugar donde creas que pertenece.
+            </p>
+
+            <!-- REPISA -->
+
+            <div class="repisa-juego">
+
+                <div class="espacios-repisa">
+
+                    <button
+                        class="espacio-repisa"
+                        data-correcto="planta"
+                        aria-label="Espacio para la planta">
+                    </button>
+
+                    <button
+                        class="espacio-repisa"
+                        data-correcto="libros"
+                        aria-label="Espacio para los libros">
+                    </button>
+
+                    <button
+                        class="espacio-repisa"
+                        data-correcto="foto"
+                        aria-label="Espacio para la foto">
+                    </button>
+
+                    <button
+                        class="espacio-repisa"
+                        data-correcto="taza"
+                        aria-label="Espacio para la taza">
+                    </button>
+
+                </div>
+
+                <div class="tabla-repisa"></div>
 
             </div>
 
 
-            <button class="boton-principal" id="otraActividad">
-                Elegir algo
+            <!-- OBJETOS DESORDENADOS -->
+
+            <p class="instruccion-repisa">
+                Selecciona un objeto.
+            </p>
+
+            <div class="objetos-repisa" id="objetosRepisa">
+
+                <button class="objeto-repisa" data-objeto="planta">
+
+                    <span class="dibujo-repisa dibujo-planta">
+
+                        <span class="hoja hoja-1"></span>
+                        <span class="hoja hoja-2"></span>
+                        <span class="hoja hoja-3"></span>
+
+                        <span class="maceta"></span>
+
+                    </span>
+
+                    <span>Planta</span>
+
+                </button>
+
+
+                <button class="objeto-repisa" data-objeto="libros">
+
+                    <span class="dibujo-repisa dibujo-libros">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>Libros</span>
+
+                </button>
+
+
+                <button class="objeto-repisa" data-objeto="foto">
+
+                    <span class="dibujo-repisa dibujo-foto">
+                        <span></span>
+                    </span>
+
+                    <span>Foto</span>
+
+                </button>
+
+
+                <button class="objeto-repisa" data-objeto="taza">
+
+                    <span class="dibujo-repisa dibujo-taza"></span>
+
+                    <span>Taza</span>
+
+                </button>
+
+            </div>
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="datos-repisa">
+
+                <span id="movimientosRepisa">
+                    Movimientos: 0
+                </span>
+
+                <span id="mejorRepisa">
+                    Mejor: --
+                </span>
+
+            </div>
+
+            <p id="mensajeRepisa" class="mensaje-repisa"></p>
+
+
+            <button
+                id="reiniciarRepisa"
+                class="boton-reiniciar-repisa">
+                Volver a acomodar
             </button>
 
         </div>

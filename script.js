@@ -22,6 +22,9 @@ const pantallaRecuerdos =
 
 const pantallaRatito =
     document.getElementById("pantallaRatito");
+    
+const pantallaRepisa =
+    document.getElementById("pantallaRepisa");
 
 
 // Todas las pantallas de Amarilla
@@ -69,6 +72,36 @@ const regresarRecuerdos =
 const regresarRatito =
     document.getElementById("regresarRatito");
 
+const botonAbrirRepisa =
+    document.getElementById("abrirRepisa");
+
+const botonRegresarRepisa =
+    document.getElementById("regresarRepisa");
+    
+const contenedorObjetosRepisa =
+    document.getElementById("objetosRepisa");
+
+const textoMovimientosRepisa =
+    document.getElementById("movimientosRepisa");
+
+const textoMejorRepisa =
+    document.getElementById("mejorRepisa");
+
+const textoMensajeRepisa =
+    document.getElementById("mensajeRepisa");
+
+const botonReiniciarRepisa =
+    document.getElementById("reiniciarRepisa");
+
+const objetosJuegoRepisa =
+    document.querySelectorAll(".objeto-repisa");
+
+const espaciosJuegoRepisa =
+    document.querySelectorAll(".espacio-repisa");
+
+let objetoSeleccionadoRepisa = null;
+let movimientosJuegoRepisa = 0;
+let objetosColocadosRepisa = 0;
 
 // -------------------------
 // CAMBIAR DE PANTALLA
@@ -229,6 +262,20 @@ botonRatito.addEventListener("click", function () {
 
 });
 
+botonAbrirRepisa.addEventListener("click", function () {
+
+    mostrarPantalla(pantallaRepisa);
+
+    iniciarJuegoRepisa();
+
+});
+
+botonRegresarRepisa.addEventListener("click", function () {
+
+    mostrarPantalla(pantallaRatito);
+
+});
+
 regresarJardin.addEventListener("click", function () {
 
     mostrarPantalla(pantallaApp);
@@ -256,49 +303,13 @@ regresarRatito.addEventListener("click", function () {
 
 });
 
+botonRegresarRepisa.addEventListener("click", function () {
 
-
-const actividadAleatoria =
-    document.getElementById("actividadAleatoria");
-
-const otraActividad =
-    document.getElementById("otraActividad");
-
-
-const actividades = [
-
-    "Escoge una canción que te recuerde a nosotros.",
-
-    "Busca una fotografía nuestra que te guste mucho.",
-
-    "Piensa en tres cosas buenas que hayan pasado hoy.",
-
-    "Tómate cinco minutos para descansar sin hacer absolutamente nada.",
-
-    "Mándame una canción que hayas estado escuchando últimamente.",
-
-    "Dime algo que quieras hacer conmigo algún día.",
-
-    "Elige una película para nuestra próxima noche juntos.",
-
-    "Busca una foto de algo bonito que hayas visto hoy.",
-
-    "Piensa en algún lugar al que te gustaría viajar conmigo.",
-
-    "Cuéntame algo pequeño que haya mejorado tu día."
-
-];
-
-
-otraActividad.addEventListener("click", function () {
-
-    const posicion =
-        Math.floor(Math.random() * actividades.length);
-
-    actividadAleatoria.textContent =
-        actividades[posicion];
+    mostrarPantalla(pantallaRatito);
 
 });
+
+
 
 // -------------------------
 // JARDÍN
@@ -349,6 +360,140 @@ function actualizarJardin() {
 
 
 actualizarJardin();
+// -------------------------
+// CARTAS - PENSÉ EN TI
+// -------------------------
+
+const pantallaCartaEspecial =
+    document.getElementById("pantallaCartaEspecial");
+
+const contenedorCartas =
+    document.getElementById("contenedorCartas");
+
+const tituloCartaEspecial =
+    document.getElementById("tituloCartaEspecial");
+
+const textoCartaEspecial =
+    document.getElementById("textoCartaEspecial");
+
+const regresarCartas =
+    document.getElementById("regresarCartas");
+
+
+const cartas = [
+
+    {
+        titulo: "Para cuando estés cansada",
+
+        subtitulo: "Puedes descansar aquí un momento.",
+
+        texto: `
+            No tienes que poder con todo todos los días.
+
+            Hay días para avanzar muchísimo y hay otros en los que simplemente
+            levantarte y continuar ya es suficiente.
+
+            Espero que hoy puedas darte un pequeño descanso.
+
+            No importa cuánto hayas hecho hoy, sigo estando orgulloso de ti.
+
+            Descansa un ratito. Mañana continuamos.
+        `
+    },
+
+
+    {
+        titulo: "Para cuando estés triste",
+
+        subtitulo: "Por si hoy no fue un buen día.",
+
+        texto: `
+            No sé exactamente qué estará pasando cuando leas esto.
+
+            Tal vez tuviste un día difícil, algo salió mal o simplemente
+            hoy no te sientes bien.
+
+            No quiero decirte que tienes que estar feliz.
+
+            Solamente quiero recordarte que no tienes que pasar por todo sola.
+
+            Estoy aquí.
+
+            Incluso en los días que no son bonitos.
+        `
+    },
+
+
+    {
+        titulo: "Para cuando dudes de ti",
+
+        subtitulo: "Quiero que recuerdes algo.",
+
+        texto: `
+            A veces somos muchísimo más duros con nosotros mismos
+            de lo que seríamos con cualquier otra persona.
+
+            Así que si hoy estás dudando de ti, quiero prestarte por un
+            momento la forma en la que yo te veo.
+
+            Veo todo lo que has aprendido.
+
+            Todo lo que has superado.
+
+            Todo lo que sigues intentando incluso cuando las cosas cuestan.
+
+            Tal vez todavía no estés donde quieres estar.
+
+            Pero has avanzado mucho más de lo que a veces puedes ver.
+        `
+    },
+
+
+    {
+        titulo: "Para cuando me extrañes",
+
+        subtitulo: "Estoy un poquito más cerca de lo que parece.",
+
+        texto: `
+            Si abriste esta carta porque me extrañas,
+            entonces probablemente yo también quisiera estar contigo ahora.
+
+            Por eso hice este pequeño lugar.
+
+            Para que incluso cuando no estemos juntos puedas encontrar
+            algo mío esperándote aquí.
+
+            Y mientras lees esto, imagina que te estoy dando
+            uno de esos abrazos que duran un poquito más de lo normal.
+        `
+    },
+
+
+    {
+        titulo: "Para cuando quieras recordar cuánto te quiero",
+
+        subtitulo: "Esta puedes abrirla todas las veces que quieras.",
+
+        texto: `
+            Te quiero en los días especiales.
+
+            Pero también te quiero en los días normales.
+
+            Cuando estamos haciendo algo divertido y cuando simplemente
+            estamos juntos sin hacer nada.
+
+            Me gusta conocerte un poquito más con cada día que pasa.
+
+            Y precisamente por eso existe Amarilla.
+
+            Porque quería hacerte algo que pudiera seguir creciendo
+            junto con nosotros.
+
+            Esta es solamente la primera flor.
+        `
+    }
+
+];
 
 function mostrarCartas() {
 
@@ -419,4 +564,292 @@ regresarCartas.addEventListener("click", function () {
 
     mostrarPantalla(pantallaPenseEnTi);
 
+});
+
+// =====================================================
+// JUEGO: ACOMODA LA REPISA
+// =====================================================
+objetosJuegoRepisa.forEach(function (objeto) {
+
+    objeto.addEventListener("click", function () {
+
+        if (objeto.classList.contains("colocado")) {
+            return;
+        }
+
+        objetosJuegoRepisa.forEach(function (otroObjeto) {
+
+            otroObjeto.classList.remove("seleccionado");
+
+        });
+
+        objetoSeleccionadoRepisa = objeto;
+
+        objeto.classList.add("seleccionado");
+
+        textoMensajeRepisa.textContent =
+            "Ahora elige dónde colocarlo.";
+
+    });
+
+});
+
+espaciosJuegoRepisa.forEach(function (espacio) {
+
+    espacio.addEventListener("click", function () {
+
+        if (objetoSeleccionadoRepisa === null) {
+
+            textoMensajeRepisa.textContent =
+                "Primero selecciona un objeto.";
+
+            return;
+
+        }
+
+
+        if (espacio.classList.contains("ocupado")) {
+
+            textoMensajeRepisa.textContent =
+                "Ese lugar ya está ocupado.";
+
+            return;
+
+        }
+
+
+        movimientosJuegoRepisa++;
+
+        actualizarMovimientosRepisa();
+
+
+        const objetoCorrecto =
+            espacio.dataset.correcto;
+
+        const objetoElegido =
+            objetoSeleccionadoRepisa.dataset.objeto;
+
+
+        if (objetoCorrecto === objetoElegido) {
+
+            colocarObjetoRepisa(espacio);
+
+        } else {
+
+            marcarErrorRepisa(espacio);
+
+        }
+
+    });
+
+});
+
+function colocarObjetoRepisa(espacio) {
+
+    objetoSeleccionadoRepisa.classList.remove("seleccionado");
+
+    objetoSeleccionadoRepisa.classList.add("colocado");
+
+    objetoSeleccionadoRepisa.disabled = true;
+
+
+    espacio.appendChild(objetoSeleccionadoRepisa);
+
+    espacio.classList.add("ocupado");
+
+
+    objetoSeleccionadoRepisa = null;
+
+    objetosColocadosRepisa++;
+
+
+    if (objetosColocadosRepisa === 4) {
+
+        terminarJuegoRepisa();
+
+    } else {
+
+        textoMensajeRepisa.textContent =
+            "Ese era su lugar. Sigue acomodando.";
+
+    }
+
+}
+
+function marcarErrorRepisa(espacio) {
+
+    espacio.classList.remove("error");
+
+    void espacio.offsetWidth;
+
+    espacio.classList.add("error");
+
+
+    textoMensajeRepisa.textContent =
+        "Creo que ese objeto va en otro lugar.";
+
+}
+
+function actualizarMovimientosRepisa() {
+
+    textoMovimientosRepisa.textContent =
+        "Movimientos: " + movimientosJuegoRepisa;
+
+}
+
+function terminarJuegoRepisa() {
+
+    textoMensajeRepisa.textContent =
+        "Listo. Nuestro rinconcito volvió a quedar bonito.";
+
+    guardarMejorRepisa();
+
+}
+
+function guardarMejorRepisa() {
+
+    const mejorGuardado =
+        localStorage.getItem("amarillaMejorRepisa");
+
+
+    if (
+        mejorGuardado === null ||
+        movimientosJuegoRepisa < Number(mejorGuardado)
+    ) {
+
+        localStorage.setItem(
+            "amarillaMejorRepisa",
+            movimientosJuegoRepisa
+        );
+
+    }
+
+
+    mostrarMejorRepisa();
+
+}
+
+function mostrarMejorRepisa() {
+
+    const mejorGuardado =
+        localStorage.getItem("amarillaMejorRepisa");
+
+
+    if (mejorGuardado === null) {
+
+        textoMejorRepisa.textContent =
+            "Mejor: --";
+
+    } else {
+
+        textoMejorRepisa.textContent =
+            "Mejor: " + mejorGuardado;
+
+    }
+
+}
+
+function iniciarJuegoRepisa() {
+
+    objetoSeleccionadoRepisa = null;
+
+    movimientosJuegoRepisa = 0;
+
+    objetosColocadosRepisa = 0;
+
+
+    textoMensajeRepisa.textContent = "";
+
+    actualizarMovimientosRepisa();
+
+    mostrarMejorRepisa();
+
+
+    espaciosJuegoRepisa.forEach(function (espacio) {
+
+        espacio.classList.remove(
+            "ocupado",
+            "error"
+        );
+
+    });
+
+
+    objetosJuegoRepisa.forEach(function (objeto) {
+
+        objeto.classList.remove(
+            "seleccionado",
+            "colocado"
+        );
+
+        objeto.disabled = false;
+
+        contenedorObjetosRepisa.appendChild(objeto);
+
+    });
+
+
+    mezclarObjetosRepisa();
+
+}
+
+function mezclarObjetosRepisa() {
+
+    const objetos =
+        Array.from(
+            contenedorObjetosRepisa.querySelectorAll(".objeto-repisa")
+        );
+
+
+    for (let i = objetos.length - 1; i > 0; i--) {
+
+        const posicionAleatoria =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+
+        const temporal =
+            objetos[i];
+
+        objetos[i] =
+            objetos[posicionAleatoria];
+
+        objetos[posicionAleatoria] =
+            temporal;
+
+    }
+
+
+    objetos.forEach(function (objeto) {
+
+        contenedorObjetosRepisa.appendChild(objeto);
+
+    });
+
+}
+
+botonReiniciarRepisa.addEventListener("click", function () {
+
+    iniciarJuegoRepisa();
+
+});
+
+// Animación del jardín al entrar
+function activarAnimacionJardin() {
+    const floresJardin = document.querySelectorAll(".jardin-flores > *");
+
+    floresJardin.forEach(function (flor, indice) {
+        flor.style.animation = "none";
+        flor.offsetHeight;
+        flor.style.animation = "emergerFlor 0.9s ease both";
+        flor.style.animationDelay = (indice * 0.08) + "s";
+    });
+}
+
+// si ya tienes el botón del jardín:
+botonJardin.addEventListener("click", function () {
+    setTimeout(function () {
+        activarAnimacionJardin();
+    }, 120);
 });
