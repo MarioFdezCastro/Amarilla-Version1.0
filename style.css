@@ -1,0 +1,762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffbea,
+            #fff4b8
+        );
+
+    color: #403b28;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffbea,
+            #fff4b8
+        );
+
+    color: #403b28;
+}
+
+
+.pantalla {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffbea,
+            #fff4b8
+        );
+}
+
+
+.oculto {
+    display: none !important;
+}
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+.flor {
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation: aparecer 2s ease;
+}
+
+h1 {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.mensaje {
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+button {
+    border: none;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    background-color: #f4c430;
+
+    color: #403b28;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.oculto {
+    display: none;
+}
+
+.carta {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    animation: aparecerCarta 1s ease;
+}
+
+.contenido-carta {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: rgba(255, 255, 255, 0.55);
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.fecha {
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    opacity: 0.6;
+}
+
+.contenido-carta h2 {
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+.contenido-carta p {
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.primera-flor {
+    font-size: 80px;
+
+    margin: 30px 0;
+
+    animation: crecerFlor 1.5s ease;
+}
+
+.frase-final {
+    font-weight: bold;
+
+    margin-top: 30px;
+}
+
+@keyframes aparecerCarta {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes crecerFlor {
+
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+/* ------------------------ */
+/* PANTALLA PRINCIPAL APP   */
+/* ------------------------ */
+
+.app {
+    min-height: 100vh;
+
+    padding: 35px 22px 50px;
+
+    animation: aparecerApp 0.8s ease;
+}
+
+.encabezado-app {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+}
+
+.nombre-app {
+    font-size: 15px;
+    font-weight: bold;
+
+    margin-bottom: 30px;
+
+    opacity: 0.7;
+}
+
+.encabezado-app h2 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.subtitulo-app {
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    opacity: 0.75;
+}
+
+
+.menu-app {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+
+.tarjeta {
+    min-height: 160px;
+
+    padding: 25px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background-color: rgba(255, 255, 255, 0.65);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+}
+
+
+.titulo-tarjeta {
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+.descripcion-tarjeta {
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    opacity: 0.7;
+}
+
+
+@keyframes aparecerApp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Adaptación para celulares */
+
+@media (max-width: 600px) {
+
+    .menu-app {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        min-height: 135px;
+    }
+
+    .encabezado-app h2 {
+        font-size: 29px;
+    }
+
+}
+.boton-regresar {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.65);
+
+    font-size: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+
+/* -------------------------------- */
+/* SECCIONES INTERNAS DE LA APP     */
+/* -------------------------------- */
+
+.seccion-app {
+    padding: 30px 20px;
+}
+
+
+.contenido-seccion {
+    width: 100%;
+    max-width: 600px;
+
+    min-height: 100%;
+
+    margin: auto;
+
+    padding: 70px 0 40px;
+}
+
+
+.contenido-seccion h2 {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+
+.descripcion-seccion {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    opacity: 0.7;
+
+    margin-bottom: 35px;
+}
+
+
+/* -------------------------------- */
+/* BOTÓN PRINCIPAL                  */
+/* -------------------------------- */
+
+.boton-principal {
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #f4c430;
+
+    color: #403b28;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* -------------------------------- */
+/* JARDÍN                           */
+/* -------------------------------- */
+
+.jardin {
+    height: 270px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+}
+
+.jardin {
+    min-height: 270px;
+
+    padding: 30px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    border-radius: 25px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-end;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+.flor-simple {
+    width: 70px;
+    height: 150px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    animation: crecerFlor 0.8s ease;
+}
+
+
+.flor-cabeza {
+    position: absolute;
+
+    top: 10px;
+
+    width: 65px;
+    height: 65px;
+}
+
+
+.petalo-simple {
+    position: absolute;
+
+    width: 28px;
+    height: 38px;
+
+    background-color: #f4c430;
+
+    border-radius: 50%;
+}
+
+
+.petalo-arriba {
+    top: 0;
+    left: 19px;
+}
+
+
+.petalo-derecha {
+    top: 18px;
+    right: 0;
+
+    transform: rotate(90deg);
+}
+
+
+.petalo-abajo {
+    bottom: 0;
+    left: 19px;
+}
+
+
+.petalo-izquierda {
+    top: 18px;
+    left: 0;
+
+    transform: rotate(90deg);
+}
+
+
+.centro-simple {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background-color: #9b6728;
+
+    border-radius: 50%;
+
+    top: 21px;
+    left: 20px;
+
+    z-index: 5;
+}
+
+
+.tallo-simple {
+    width: 6px;
+    height: 90px;
+
+    background-color: #718f4a;
+
+    border-radius: 5px;
+}
+
+
+.tarjeta-info {
+    background-color: rgba(255, 255, 255, 0.6);
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+
+.numero-jardin {
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+.mensaje-jardin {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    opacity: 0.65;
+}
+
+
+/* -------------------------------- */
+/* PENSÉ EN TI                      */
+/* -------------------------------- */
+
+.mensaje-especial {
+    min-height: 230px;
+
+    padding: 35px;
+
+    background-color: rgba(255, 255, 255, 0.65);
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.mensaje-especial p {
+    font-size: 21px;
+
+    line-height: 1.6;
+}
+
+
+/* -------------------------------- */
+/* RECUERDOS                        */
+/* -------------------------------- */
+
+.lista-recuerdos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.recuerdo {
+    background-color: rgba(255, 255, 255, 0.65);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.foto-recuerdo {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+
+    cursor: pointer;
+}
+
+
+.contenido-recuerdo h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+.contenido-recuerdo p {
+    line-height: 1.6;
+}
+
+
+.contenido-recuerdo {
+    padding: 20px;
+}
+
+
+.fecha-recuerdo {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.contenido-recuerdo p {
+    line-height: 1.5;
+}
+
+
+.recuerdo.futuro {
+    padding: 25px;
+
+    text-align: center;
+
+    opacity: 0.65;
+}
+
+
+/* -------------------------------- */
+/* UN RATITO                        */
+/* -------------------------------- */
+
+.actividad-cozy {
+    min-height: 230px;
+
+    padding: 35px;
+
+    background-color: rgba(255, 255, 255, 0.65);
+
+    border-radius: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.titulo-actividad {
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+#actividadAleatoria {
+    font-size: 20px;
+
+    line-height: 1.6;
+}

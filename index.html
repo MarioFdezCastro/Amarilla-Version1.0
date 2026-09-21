@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Amarilla</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Pantalla inicial -->
+    <main class="pantalla inicio" id="pantallaInicio">
+
+        <div class="flor">
+            🌼
+        </div>
+
+        <h1>Amarilla</h1>
+
+        <p class="mensaje">
+            Hice algo para ti.
+        </p>
+
+        <button id="botonEntrar">
+            Tengo algo para ti
+        </button>
+
+    </main>
+
+
+    <!-- Carta -->
+    <section class="pantalla carta oculto" id="pantallaCarta">
+        
+        <button class="boton-regresar" id="regresarInicio">
+            ←
+        </button>
+
+        <div class="contenido-carta">
+
+            <p class="fecha">
+                21 de septiembre
+            </p>
+
+            <h2>Para ti mi vida entera 💞</h2>
+
+            <p>
+                Hoy quería regalarte flores amarillas.
+            </p>
+
+            <p>
+                Pero esta vez quería hacer algo diferente, eso y que no hay mucho presupuesto jaja.
+            </p>
+
+            <p>
+                Algo que no durara solamente unos días y que no se marchite por malas vibras.
+            </p>
+
+            <p>
+                Así que decidí plantar la primera aquí.
+            </p>
+
+            <div class="primera-flor">
+                🌻
+            </div>
+
+            <p class="frase-final">
+                Esto solo es el inicio (Es una version inicial jaja).
+            </p>
+
+            <button id="botonContinuar">
+                Continuar
+            </button>
+
+        </div>
+
+    </section>
+        <!-- Pantalla principal de la aplicación -->
+    <section class="pantalla app oculto" id="pantallaApp">
+        <button class="boton-regresar" id="regresarCarta">
+            ←
+        </button>
+
+        <div class="encabezado-app">
+
+            <p class="nombre-app">
+                Amarilla
+            </p>
+
+            <h2>
+                Hola, mi amor.
+            </h2>
+
+            <p class="subtitulo-app">
+                Este pequeño lugar es para nosotros.
+            </p>
+
+        </div>
+
+
+        <div class="menu-app">
+
+            <button class="tarjeta" id="botonJardin">
+
+                <span class="titulo-tarjeta">
+                    Nuestro jardín
+                </span>
+
+                <span class="descripcion-tarjeta">
+                    Hagámoslo crecer juntos.
+                </span>
+
+            </button>
+
+
+            <button class="tarjeta" id="botonPenseEnTi">
+
+                <span class="titulo-tarjeta">
+                    Pensé en ti
+                </span>
+
+                <span class="descripcion-tarjeta">
+                    Hay algo que quiero decirte.
+                </span>
+
+            </button>
+
+
+            <button class="tarjeta" id="botonRecuerdos">
+
+                <span class="titulo-tarjeta">
+                    Recuerdos
+                </span>
+
+                <span class="descripcion-tarjeta">
+                    Un lugar para nuestros momentos.
+                </span>
+
+            </button>
+
+
+            <button class="tarjeta" id="botonRatito">
+
+                <span class="titulo-tarjeta">
+                    Un ratito
+                </span>
+
+                <span class="descripcion-tarjeta">
+                    Algo para distraerte un momento.
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+    <!-- NUESTRO JARDÍN -->
+    <section class="pantalla seccion-app oculto" id="pantallaJardin">
+
+        <button class="boton-regresar" id="regresarJardin">
+            ←
+        </button>
+
+        <div class="contenido-seccion">
+
+            <p class="nombre-app">Amarilla</p>
+
+            <h2>Nuestro jardín</h2>
+
+            <p class="descripcion-seccion">
+                Un pequeño lugar que crecerá con nosotros.
+            </p>
+
+
+            <div class="jardin" id="jardinFlores">
+
+                <!-- JavaScript plantará las flores -->
+
+            </div>
+
+
+            <div class="tarjeta-info">
+
+                <span class="numero-jardin" id="numeroFlores">
+                    0
+                </span>
+
+                <span>
+                    flor plantada
+                </span>
+
+            </div>
+
+
+            <p class="mensaje-jardin">
+                La primera nació el 21 de septiembre.
+            </p>
+
+        </div>
+
+    </section>
+    <!-- PENSÉ EN TI -->
+    <section class="pantalla seccion-app oculto" id="pantallaPenseEnTi">
+
+        <button class="boton-regresar" id="regresarPenseEnTi">
+            ←
+        </button>
+
+        <div class="contenido-seccion">
+
+            <p class="nombre-app">Amarilla</p>
+
+            <h2>Pensé en ti</h2>
+
+            <p class="descripcion-seccion">
+                Por si hoy necesitabas leer algo bonito.
+            </p>
+
+
+            <div class="mensaje-especial">
+
+                <p id="mensajeAleatorio">
+                    Tengo algo guardado para ti.
+                </p>
+
+            </div>
+
+
+            <button class="boton-principal" id="otroMensaje">
+                Descubrir un mensaje
+            </button>
+
+        </div>
+
+    </section>
+    <!-- RECUERDOS -->
+    <section class="pantalla seccion-app oculto" id="pantallaRecuerdos">
+
+        <button class="boton-regresar" id="regresarRecuerdos">
+            ←
+        </button>
+
+        <div class="contenido-seccion">
+
+            <p class="nombre-app">Amarilla</p>
+
+            <h2>Recuerdos</h2>
+
+            <p class="descripcion-seccion">
+                Algunos pedacitos de nuestra historia.
+            </p>
+
+            <div class="lista-recuerdos" id="listaRecuerdos">
+
+                <!-- JavaScript colocará aquí los recuerdos -->
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- UN RATITO -->
+    <section class="pantalla seccion-app oculto" id="pantallaRatito">
+
+        <button class="boton-regresar" id="regresarRatito">
+            ←
+        </button>
+
+        <div class="contenido-seccion">
+
+            <p class="nombre-app">Amarilla</p>
+
+            <h2>Un ratito</h2>
+
+            <p class="descripcion-seccion">
+                Para cuando quieras desconectarte un momento.
+            </p>
+
+
+            <div class="actividad-cozy">
+
+                <p class="titulo-actividad">
+                    ¿Qué hacemos?
+                </p>
+
+                <p id="actividadAleatoria">
+                    Presiona el botón y veamos qué nos toca.
+                </p>
+
+            </div>
+
+
+            <button class="boton-principal" id="otraActividad">
+                Elegir algo
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
